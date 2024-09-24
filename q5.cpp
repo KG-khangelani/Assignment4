@@ -1,37 +1,36 @@
-#include <iostream>
-#include <cstdlib>
 #include "Dictionary.h"
-#include <vector>
+#include <iostream>
+#include <string>
+
 using namespace std;
 
-int main()
-{
-    Dictionary parts;
-    string part;
-    int key;
-
-    //add 4 values to the parts dictionary
-    for (int i = 0; i <= 3; i++)
-    {
-        cout << "Please enter a part name and a key to add "
-             << "to the parts dictionary." << endl;
-        cout << "Part name: ";
-        getline(cin, part);
-        cout << "Key for part name: ";
-        cin  >> key;
-        parts.add(key, part);
-        cin.get();
-    }
-    cout << endl;
+int main() {
+    Dictionary<int, string> parts;
+    parts.add(100000, "tire");
+    parts.add(100001, "wheel");
+    parts.add(100002, "distributor");
+    parts.add(100003, "air filter");
 
     parts.display();
-    cout << endl;
 
-    //find the part for a key
-    cout << "For which key do you want to find the part? ";
-    cin  >> key;
-    cout << "The part for key " << key << " is ";
-    cout << parts.find(key) << endl;
+    try {
+        cout << "The part for key 100002 is: " << parts.find( 100002) << std::endl;
+    } catch (const std::exception& e) {
+        cout << e.what() << std::endl;
+    }
+
+    // Testing with another type of dictionary
+    Dictionary<string, double> productPrices;
+    productPrices.add("Milk", 3.99);
+    productPrices.add("Bread", 2.49);
+
+    productPrices.display();
+
+    try {
+        cout << "The price of Bread is: " << productPrices.find("Bread") << std::endl;
+    } catch (const std::exception& e) {
+        cout << e.what() << endl;
+    }
 
     return 0;
-} 
+}

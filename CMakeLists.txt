@@ -18,6 +18,6 @@ add_executable(Ass4
 #        q4template.cpp
 
         q5.cpp
-        Dictionary.cpp
+        Dictionary.tpp
         Dictionary.h
 )

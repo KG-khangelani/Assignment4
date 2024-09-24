@@ -6,16 +6,16 @@
 
 using namespace std;
 
+template <typename Keytype, typename Valuetype>
 class Dictionary
 {
-public:
-    Dictionary();
-    void add(int key, const string &value); string
-    find (int key) const;
-    void display();
-private:
-    vector<int> keys;
-    vector<string>
-            values;
+    public:
+        Dictionary();
+        void add(Keytype key, Valuetype value);
+        Valuetype find (Keytype key) const;
+        void display() const;
+    private:
+        vector<Keytype> keys;
+        vector<Valuetype> values;
 };
 #endif //ASS4_DICTIONARY_H
