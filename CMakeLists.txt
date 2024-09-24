@@ -15,5 +15,9 @@ add_executable(Ass4
 #        CarInsurance.h
 
 #        q4.cpp
-        q4template.cpp
+#        q4template.cpp
+
+        q5.cpp
+        Dictionary.cpp
+        Dictionary.h
 )
