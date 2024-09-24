@@ -1,0 +1,66 @@
+//
+// Created by user on 2024/09/24.
+//
+
+#include <iostream>
+#include <string>
+#include "InsurancePolicy.h"
+
+using namespace std;
+
+InsurancePolicy::InsurancePolicy()
+{
+    policyNr = 0;
+    policyHolder = "";
+    annualRate = 0.0;
+}
+
+InsurancePolicy::InsurancePolicy(int pNr, string pHolder, double aRate)
+{
+    policyNr = pNr;
+    policyHolder = pHolder;
+    annualRate = aRate;
+}
+
+InsurancePolicy::~InsurancePolicy()
+{
+    cout << "Destructor called" << endl;
+}
+
+void InsurancePolicy::setPolicy(int pNr, string pHolder, double aRate)
+{
+    policyNr = pNr;
+    policyHolder = pHolder;
+    annualRate = aRate;
+}
+
+int InsurancePolicy::get_pNr() const
+{
+    return policyNr;
+}
+
+string InsurancePolicy::get_pHolder() const
+{
+    return policyHolder;
+}
+
+double InsurancePolicy::get_aRate() const
+{
+    return annualRate;
+}
+
+double InsurancePolicy::get_excess() const
+{
+    if (excess) {
+        return excess;
+    } else {
+        return 0;
+    }
+}
+
+void InsurancePolicy::set_excess()
+{
+    cout << "Enter the excess amount: ";
+    cin >> excess;
+    cout << "Excess amount set to: " << excess << endl;
+}
