@@ -48,3 +48,9 @@ double InsurancePolicy::get_aRate() const
 {
     return annualRate;
 }
+
+void InsurancePolicy::showPolicy(ostream &out) const {
+    out << "Policy Number: " << get_pNr() << endl;
+    out << "Policy Holder: " << get_pHolder() << endl;
+    out << "Annual Rate: " << get_aRate() << endl;
+}

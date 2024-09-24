@@ -27,18 +27,13 @@ void CarInsurance::set_excess()
     cout << "Excess amount set to: " << excess << endl;
 }
 
-void CarInsurance:: setPolicy(int pNr, string pHolder, double
-aRate, double eValue)
+void CarInsurance:: setPolicy(int pNr, string pHolder, double aRate, double eValue)
 {
-    policyNr = pNr;
-    policyholder = pHolder;
-    annualRate = aRate;
+    InsurancePolicy::setPolicy(pNr, pHolder, aRate);
     excess = eValue;
 }
 
 void CarInsurance::showPolicy(ostream &out) const {
-    out << "Policy Number: " << get_pNr() << endl;
-    out << "Policy Holder: " << get_pHolder() << endl;
-    out << "Annual Rate: " << get_aRate() << endl;
-    out << "Excess: " << get_excess() << endl;
+    InsurancePolicy::showPolicy(out);
+    out << "Excess Amount: " << get_excess() << endl;
 }
