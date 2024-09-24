@@ -7,9 +7,13 @@ add_executable(Ass4
 #        main.cpp
 #        q1.cpp
 #        q2.cpp
-        q3.cpp
-        InsurancePolicy.cpp
-        InsurancePolicy.h
-        CarInsurance.cpp
-        CarInsurance.h
+
+#        q3.cpp
+#        InsurancePolicy.cpp
+#        InsurancePolicy.h
+#        CarInsurance.cpp
+#        CarInsurance.h
+
+#        q4.cpp
+        q4template.cpp
 )
