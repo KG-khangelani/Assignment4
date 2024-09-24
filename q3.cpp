@@ -1,23 +1,28 @@
 #include <iostream>
-#include <string>
+#include <fstream>
 #include "InsurancePolicy.h"
+#include "CarInsurance.h"
 
 using namespace std;
 
-class CarInsurance: public InsurancePolicy
+int main()
 {
-    public:
-        void setPolicy(int pNr, string pHolder, double aRate, double eValue);
-        void showPolicy(ostream & out)const;
-private:
-        double excess;
-};
-
-void CarInsurance:: setPolicy(int pNr, string pHolder, double
-aRate, double eValue)
-{
-    policyNr = pNr;
-    policyholder = pHolder;
-    annualRate = aRate; excess
-                                = eValue;
+    InsurancePolicy myPolicy(123456, "Peter Molema", 3450.67);
+    CarInsurance yourPolicy(456891, "Wilson Ntemba", 5550.67,
+                            15000.00);
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+    myPolicy.showPolicy(cout);
+    cout << endl;
+    yourPolicy.showPolicy(cout);
+    cout << endl << "AFTER UPDATES:" << endl;
+    myPolicy.setPolicy(123456, "Peter Molema", 5450.67);
+    yourPolicy.setPolicy(456891,"Wilson Ntemba",6650.67,
+                         25000.00);
+    myPolicy.showPolicy(cout);
+    cout << endl;
+    yourPolicy.showPolicy(cout);
+    cout << endl;
+    return 0;
 }

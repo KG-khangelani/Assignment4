@@ -19,8 +19,6 @@ class InsurancePolicy
         string get_pHolder()const;
         double get_aRate()const;
 
-        double get_excess()const;
-        void set_excess();
         void showPolicy(ostream & out)const;
     private:
         int policyNr;

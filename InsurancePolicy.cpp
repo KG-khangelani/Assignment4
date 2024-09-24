@@ -48,19 +48,3 @@ double InsurancePolicy::get_aRate() const
 {
     return annualRate;
 }
-
-double InsurancePolicy::get_excess() const
-{
-    if (excess) {
-        return excess;
-    } else {
-        return 0;
-    }
-}
-
-void InsurancePolicy::set_excess()
-{
-    cout << "Enter the excess amount: ";
-    cin >> excess;
-    cout << "Excess amount set to: " << excess << endl;
-}
